@@ -1,0 +1,276 @@
+/* Remove default margin */
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+img,
+picture,
+video,
+canvas {
+    display: block;
+    max-width: 100%;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+    list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+label,
+input,
+textarea,
+select,
+button,
+.label {
+    @extend %text;
+}
+
+input[type='search'] {
+    appearance: none;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+input[type='search'],
+input[type='date'] {
+    position: relative;
+    padding: 15px;
+    border: solid 1px black;
+    border-radius: 4px;
+    transition: border-color 300ms ease;
+}
+
+
+:root {
+    --red-color: #FF6057;
+    --yellow-color: #FFBC2D;
+    --green-color: #2AC840;
+    --grey-bg-color: #6D7179;
+    --grey-app-color: #7D8287;
+    --shadow-color: #312B48;
+    --toolbar-color: #E1EEE1;
+    --blue-text: #4CC4FF;
+    --pink-text: #FE61A9;
+    --font-large: 50px;
+    --font-medium: 18px;
+    --font-small: 14px;
+}
+
+/* custom styles */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    margin: 0;
+    height: 100vh;
+    background-color: var(--grey-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    align-self: center;
+    height: 80vh;
+    min-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 5px 40px var(--shadow-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* barre de menu */
+
+.toolbar {
+    overflow: hidden;
+    width: 100%;
+    height: 36px;
+    background-color: var(--toolbar-color);
+    border-bottom: solid 1px var(--shadow-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actionBtns,
+.small-text {
+    align-items: center;
+    height: 16px;
+}
+
+.actionBtns {
+    display: flex;
+    gap: 8px;
+    padding-left: 15px;
+    border: none;
+}
+
+button.window {
+    border: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+}
+
+#green {
+    background-color: var(--green-color);
+}
+
+#yellow {
+    background-color: var(--yellow-color);
+}
+#red {
+    background-color: var(--red-color);
+}
+
+#blue {
+    color: var(--blue-text);
+}
+
+#pink {
+    color: var(--pink-text);
+}
+
+.small-text {
+    font-size: var(--font-small);
+}
+
+.medium-text {
+    font-size: var(--font-medium);
+}
+
+.large-text {
+    font-size: var(--font-large);
+    font-weight: 900;
+    font-style: italic;
+    text-shadow: 0px 5px 12px var(--shadow-color);
+}
+
+#tab-title {
+    padding-right: 15px;
+    color: var(--grey-bg-color);
+}
+
+/* screen content */
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+
+
+/* header */
+
+.header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* board */
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.cell {
+    cursor: pointer;
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    box-shadow: 0 5px 12px var(--shadow-color);
+}
+
+.cell:hover {
+    background-color: #f3f3f3;
+}
+
+
+/* Result */
+
+.resultReset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    padding: 20px;
+}
+
+.gameResult {
+    min-height: 1.5em;
+    font-size: var(--font-medium);
+}
+
+button.reset {
+    cursor: pointer;
+    border: solid 1.5px white;
+    background-color: var(--shadow-color);
+    color: white;
+    font-size: var(--font-small);
+    font-weight: 200;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+button.reset:hover {
+    background-color: white;
+    border-color: var(--shadow-color);
+    color: var(--shadow-color);
+}
